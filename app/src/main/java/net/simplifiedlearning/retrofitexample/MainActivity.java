@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public static String[] images1;
     public static String[] views1;
     public static String[] likes1;
+    public static String[] id1;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
@@ -125,10 +126,12 @@ public class MainActivity extends AppCompatActivity {
                 String[] images = new String[postsList.size()];
                 String[] views = new String[postsList.size()];
                 String[] likes = new String[postsList.size()];
+                String[] id = new String[postsList.size()];
                 headings1= new String[postsList.size()];
                 images1= new String[postsList.size()];
                 views1= new String[postsList.size()];
                 likes1= new String[postsList.size()];
+                id1= new String[postsList.size()];
 
                 //looping through all the heroes and inserting the names inside the string array
                 for (int i = 0; i < postsList.size(); i++) {
@@ -136,12 +139,13 @@ public class MainActivity extends AppCompatActivity {
                     images[i]=postsList.get(i).getImage();
                     views[i]=postsList.get(i).getViews();
                     likes[i]=postsList.get(i).getLikes();
+                    id[i]=postsList.get(i).getId();
                 }
 
 
                 //displaying the string array into listview
                 //listView.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, heroes));
-                setUpRecyclerView(headings,images,views,likes);
+                setUpRecyclerView(headings,images,views,likes,id);
 
             }
 
@@ -152,12 +156,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void setUpRecyclerView(String[] temp,String[] temp1,String[] temp2,String[] temp3){
+    public void setUpRecyclerView(String[] temp,String[] temp1,String[] temp2,String[] temp3, String[] temp4){
         for(int i=0;i<temp.length;i++){
             headings1[i]=temp[i];
             images1[i]=temp1[i];
             views1[i]=temp2[i];
             likes1[i]=temp3[i];
+            id1[i]=temp4[i];
         }
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(this);

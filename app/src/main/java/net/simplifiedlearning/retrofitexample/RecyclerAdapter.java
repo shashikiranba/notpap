@@ -26,6 +26,7 @@ import static net.simplifiedlearning.retrofitexample.MainActivity.views1;
  */
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+    public static int poid;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -36,6 +37,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public TextView itemViews;
         public TextView itemHeadings;
         public TextView itemLikes;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -55,9 +57,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
                     int position= getAdapterPosition();
 
+                    poid=position;
+
+
                     //if(position==0)
-                    //{Intent intent = new Intent(v.getContext(),WeekActivity.class);
-                    //    v.getContext().startActivity(intent);}
+                    Intent intent = new Intent(v.getContext(),IndividualPost.class);
+                        v.getContext().startActivity(intent);
 
                     //Snackbar snackbar=Snackbar.make(v, "Click detected on item " + position,
                     //        Snackbar.LENGTH_LONG);

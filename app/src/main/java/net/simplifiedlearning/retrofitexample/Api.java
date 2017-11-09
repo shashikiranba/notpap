@@ -15,6 +15,8 @@ public interface Api {
 
     @GET("json.php")
     Call<List<Posts>> getHeroes();
+
+
 }
 
 
